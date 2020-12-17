@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+        #wrap { 
+	width: 900px; 
+	margin: 0 auto; 
+}
+body {
+  font-family: Lato; 
+
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: black;
+  
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #333333;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+* {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+
+
+
+
+
+
+
+
+#h11 span { 
+            display: flex; 
+            flex-direction: row; 
+        } 
+          
+        #h11 span:before, 
+        #h11 span:after { 
+            content: ""; 
+            flex: 1 1; 
+            border-bottom: 2px solid #000; 
+            margin: auto; 
+        } 
+
+
+
+
+        #logo{
+          text-align: justify;
+        }
+        #logo span {
+  color: red;
+  font-style:italic
+}       
+          
+
+</style>
+  <title>My Site</title>
+  
+ 
+
+</head>
+
+  <body>
+    <script>
+    
+         function confirmRefresh() {
+         var okToRefresh = confirm("Do you really want to refresh the page?");
+         if (okToRefresh)
+           {
+               setTimeout("location.reload(true);",1500);
+           }
+         }
+         // -->
+         </script>
+   
+     
+ 
+ <div class="navbar">
+   <a href="./z.html">HOME</a>
+ <div class="dropdown">
+     <button class="dropbtn">MY FAVORITE THINGS
+      
+     </button>
+     <div class="dropdown-content">
+       <a  href="./musicc.html">MUSIC</a>
+       <a href="./movies.html">MOVIES</a>
+       <a href="./food.html">FOOD</a>
+     </div>
+   </div> 
+   <a href="./gallery.html">GALLERY</a>
+    <a href="#blog">BLOG</a>
+    <a href="./survey.html">SURVEY</a>
+  
+  
+  <a href="./contact.html">CONTACT</a> 
+  <a href="javascript:confirmRefresh();"><img src="https://img.freepik.com/free-photo/rotate-symbol_318-9381.png?size=318&ext=png" width="15" height="15"></a>
+ </div>
+ <br>
+<div id="wrap">
+  
+  <h1 id="h11" ><span>&nbsp;&nbsp; Gallery &nbsp;&nbsp;</span></h1>
+
+  <style>
+    .mySlides {display:none}
+    .w3-left, .w3-right, .w3-badge {cursor:pointer}
+    .w3-badge {height:13px;width:13px;padding:0}
+    </style>
+    <body>
+    
+    <div class="w3-container">
+      
+    </div>
+    
+    <div class="w3-content w3-display-container" style="max-width:2000px">
+        <style>
+            img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+        </style>
+      <img src="https://cdn1.vox-cdn.com/uploads/chorus_asset/file/7785453/21a05c1b5a3bcd4a7ee3b84f4ba84e74.jpg" width="480" height="356" alt="" class="img-frame" >
+     
+      </div>
+    </div>
+    
+    <script>
+        function clickCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (sessionStorage.clickcount) {
+              sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+            } else {
+              sessionStorage.clickcount = 1;
+            }
+           
+            document.getElementById("result").innerHTML = "Your picture has " + sessionStorage.clickcount + " like(s) "; 
+          } else {
+            document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+          }
+        }
+        </script>
+        <p style="text-align:center"><button onclick="clickCounter()" type="button">Like</button></p>
+        <div id="result"></div>
+        
+         
+               
+         
+         
+         <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function currentDiv(n) {
+          showDivs(slideIndex = n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" w3-white", "");
+          }
+          x[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " w3-white";
+        }
+        </script>
+       
+        <form text-align: center>
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <textarea id="words" rows="5" cols="63">enter</textarea>
+          <br>
+          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" onclick="getwords()" value="Add a comment" /> <br>
+          <p id="para"></p>
+          </form>
+          
+
+
+          <script type="text/javascript">
+          function getwords() {
+            text = words.value;
+            document.getElementById("para").innerHTML += '<p>'+text
+            document.getElementById("words").value = "enter"
+          }
+          </script>
+
+
+
