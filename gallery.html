@@ -154,7 +154,7 @@ body {
      </div>
    </div> 
    <a href="./gallery.html">GALLERY</a>
-    <a href="#blog">BLOG</a>
+    <a href="./blog.html">BLOG</a>
     <a href="./survey.html">SURVEY</a>
   
   
@@ -185,10 +185,10 @@ body {
   margin-right: auto;
 }
         </style>
-      <img src="https://cdn1.vox-cdn.com/uploads/chorus_asset/file/7785453/21a05c1b5a3bcd4a7ee3b84f4ba84e74.jpg" width="480" height="356" alt="" class="img-frame" >
+      <img src="https://wallpaperaccess.com/full/2397009.jpg"   height="400" width="900" alt="" class="img-frame" >
      
       </div>
-    </div>
+    
     
     <script>
         function clickCounter() {
@@ -205,60 +205,69 @@ body {
           }
         }
         </script>
-        <p style="text-align:center"><button onclick="clickCounter()" type="button">Like</button></p>
+        <p ><button onclick="clickCounter()" type="button">Like</button></p>
         <div id="result"></div>
         
-         
+        <style media="screen">
+            input,button{
+              padding: 7px;
+              height:40px;
+            }
+          
+            fieldset{
+              margin-bottom: 20px;
+            }
+          
+          </style>
+          
+          <fieldset>
+              <br>
+            <legend>Add a comment</legend>
+            <input id="inpKey" type="text" placeholder="Username:">
+            <input id="inpValue" type="text" placeholder="Comment:">
+            <button type="button" id="btnInsert">Add</button>
+          </fieldset>
+          <fieldset>
+            <legend>Comment section</legend>
+            <div id="IsOutput">
+          
+          
+            </div>
+          </fieldset>
+          </body>
+          <script type="text/javascript">
+            const inpKey = document.getElementById("inpKey");
+            const valKey = document.getElementById("valKey");
+            const btnInsert = document.getElementById("btnInsert");
+            const IsOutput = document.getElementById("IsOutput");
+          
+            btnInsert.onclick = function()
+            {
+              const key = inpKey.value;
+              const value = inpValue.value;
+           
+          
+              if(key && value){
+                localStorage.setItem(key,value);
+                location.reload();
+              }
+            };
+          
+            for(let i=0; i<localStorage.length;i++){
+          
+              const key = localStorage.key(i);
+              const value = localStorage.getItem(key);
+              IsOutput.innerHTML += `${key}:${value}<br />`;
+              localStorage.clear();
+          
+            }
+          </script>
+          </div>
                
          
          
-         <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-        
-        function plusDivs(n) {
-          showDivs(slideIndex += n);
-        }
-        
-        function currentDiv(n) {
-          showDivs(slideIndex = n);
-        }
-        
-        function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("mySlides");
-          var dots = document.getElementsByClassName("demo");
-          if (n > x.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = x.length}
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";  
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" w3-white", "");
-          }
-          x[slideIndex-1].style.display = "block";  
-          dots[slideIndex-1].className += " w3-white";
-        }
-        </script>
        
-        <form text-align: center>
-          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <textarea id="words" rows="5" cols="63">enter</textarea>
-          <br>
-          &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="button" onclick="getwords()" value="Add a comment" /> <br>
-          <p id="para"></p>
-          </form>
-          
-
-
-          <script type="text/javascript">
-          function getwords() {
-            text = words.value;
-            document.getElementById("para").innerHTML += '<p>'+text
-            document.getElementById("words").value = "enter"
-          }
-          </script>
-
+       
+        
 
 
